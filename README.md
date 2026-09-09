@@ -70,10 +70,10 @@ const pair = await getRate('USD', 'TND', { apiKey: 'art_live_...' });
 {
   bank: 'bct',
   name: 'Central Bank of Tunisia',
-  rate_date: '2026-08-20',   // Central Bank of Tunisia's own publication date
+  rate_date: '2026-09-08',   // Central Bank of Tunisia's own publication date
   source: 'USD',
   target: 'TND',
-  rate: 2.9036,
+  rate: 2.9158,
   rate_type: 'reference',
   derived: false,
   method: 'published',
@@ -98,9 +98,9 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'bct',
   name: 'Central Bank of Tunisia',
-  rate_date: '2026-08-20',
+  rate_date: '2026-09-08',
   rates: [
-    { "base": "USD", "quote": "TND", "type": "reference", "value": 2.9036 },
+    { "base": "USD", "quote": "TND", "type": "reference", "value": 2.9158 },
     // … the rest of the published table (20 currencies vs TND)
   ],
   disclaimer: '…'
@@ -140,7 +140,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'bct-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'TND', from: '2026-01-01', to: '2026-08-20' },
+  { source: 'USD', target: 'TND', from: '2026-01-01', to: '2026-09-08' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -153,11 +153,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'TND',
   from: '2026-01-01',
-  to: '2026-08-20',
+  to: '2026-09-08',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-08-20', rate: 2.9036, rate_type: 'reference', derived: false, method: 'published' },
+    { date: '2026-09-08', rate: 2.9158, rate_type: 'reference', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
@@ -235,6 +235,14 @@ getRate('USD', 'TND', { apiKey: 'art_live_...' }).then((pair) => console.log(pai
 | `getLatestRates({ apiKey })` | Free | The central bank's full latest published table |
 | `getRatesForDate(date, { apiKey, source?, target? })` | Paid | The official table (or one pair) for a YYYY-MM-DD date |
 | `getHistory({ symbol \| source+target, from?, to? }, { apiKey })` | Paid | Daily series since 2004 |
+
+## 📥 Bulk data (no key)
+
+Need the whole archive rather than an API call? The same published tables are mirrored daily as open data:
+
+- Hugging Face: [AllRates/central-bank-exchange-rates](https://huggingface.co/datasets/AllRates/central-bank-exchange-rates) — one CSV per institution (`rates/bct.csv`)
+- Kaggle: [allratestoday/central-bank-exchange-rates](https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates)
+- CDN JSON: `https://cdn.jsdelivr.net/gh/AllRates-Today/central-bank-exchange-rates@main/data/bct/latest.json`
 
 ## 🔗 Links
 
