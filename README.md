@@ -1,4 +1,4 @@
-# Central Bank of Tunisia Exchange Rate API — bct-exchange-rate
+# Central Bank of Tunisia Exchange Rates API — bct-exchange-rate
 
 [![npm version](https://img.shields.io/npm/v/bct-exchange-rate.svg)](https://www.npmjs.com/package/bct-exchange-rate)
 [![license](https://img.shields.io/npm/l/bct-exchange-rate.svg)](https://github.com/AllRates-Today/bct-exchange-rate/blob/main/LICENSE)
@@ -18,6 +18,21 @@
 
 > **Official rate, not mid-market:** every value here is a number Central Bank of Tunisia itself published, fixed once printed and carrying the central bank's own `rate_date` — what filings and audits require. Need the live interbank midpoint for pricing or display instead? Use the [mid-market API](https://allratestoday.com/docs/) or [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk). The two can diverge by several percent.
 
+## ⚡ Try it without a key
+
+The latest Central Bank of Tunisia table is also served keyless, CORS-open and edge-cached, for evaluation, embeds and AI agents:
+
+```bash
+curl "https://allratestoday.com/api/open/central-bank/bct?source=USD&target=TND"
+```
+
+```js
+const r = await fetch('https://allratestoday.com/api/open/central-bank/bct').then((x) => x.json());
+console.log(r.rate_date, r.rates.length); // the central bank's latest published table, no key
+```
+
+The open endpoint serves the *latest* table only and asks for a visible attribution link. The client below uses the keyed API, which adds point-in-time tables, history, and CSV/XML/Excel output.
+
 ## 🔑 Get your API key
 
 Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required. Latest rates are on every plan, including free.
@@ -36,7 +51,7 @@ yarn add bct-exchange-rate
 pnpm add bct-exchange-rate
 ```
 
-Also published under the org scope as [`@allratestoday/bct-exchange-rate`](https://www.npmjs.com/package/@allratestoday/bct-exchange-rate) — same code, same versions.
+Requires Node 18+ (global `fetch`); also runs on Bun, Deno and edge runtimes. Also published under the org scope as [`@allratestoday/bct-exchange-rate`](https://www.npmjs.com/package/@allratestoday/bct-exchange-rate) — same code, same versions.
 
 ## 🏁 Quick start
 
@@ -77,7 +92,7 @@ const pair = await getRate('USD', 'TND', { apiKey: 'art_live_...' });
   rate_type: 'reference',
   derived: false,
   method: 'published',
-  disclaimer: '…'
+  disclaimer: 'Official rates as published by the named central bank. On weekends/holidays the most recent published rate_date is returned.'
 }
 ```
 
@@ -174,6 +189,39 @@ Central Bank of Tunisia currently publishes rates covering **20 currencies** aga
 
 🇦🇪 `AED` · 🇧🇭 `BHD` · 🇨🇦 `CAD` · 🇨🇭 `CHF` · 🇨🇳 `CNY` · 🇩🇰 `DKK` · 🇩🇿 `DZD` · 🇪🇺 `EUR` · 🇬🇧 `GBP` · 🇯🇵 `JPY` · 🇰🇼 `KWD` · 🇱🇾 `LYD` · 🇲🇦 `MAD` · 🇲🇷 `MRU` · 🇳🇴 `NOK` · 🇴🇲 `OMR` · 🇶🇦 `QAR` · 🇸🇦 `SAR` · 🇸🇪 `SEK` · 🇺🇸 `USD`
 
+## 🏛️ Source
+
+The Central Bank of Tunisia publishes daily interbank average dinar rates for about 20 currencies — the official reference Tunisian businesses, customs and banks use. The archive reaches back to 2004, and the bulletin also carries banknote and forward rates.
+
+- Publisher's own page: [Cours de change](https://www.bct.gov.tn/bct/siteprod/cours.jsp) · [www.bct.gov.tn](https://www.bct.gov.tn)
+- Publication: every business day; the exact schedule, freshness status and any current delay are on the [Central Bank of Tunisia rates page](https://allratestoday.com/central-bank-rates-api/bct/)
+- Values are stored unmodified, with the publisher's own `rate_date` on every row — see the [methodology](https://allratestoday.com/official-rates-methodology/)
+
+## 🧭 Reading the numbers
+
+- `value` is always **quote currency per 1 unit of base currency** (`base: "EUR", quote: "USD", value: 1.15` means 1 EUR = 1.15 USD).
+- Central Bank of Tunisia quotes **TND per 1 unit of foreign currency** (e.g. `base: "USD", quote: "TND"` means TND per one US dollar).
+- Need the other way round? Ask `getRate(target, source)` and the API inverts or crosses for you, flagged `derived: true` — never divide a published rate yourself in a compliance workflow.
+- `rate_type` tells you which of the central bank's series a row belongs to (`reference` here); some publishers print buy/sell or several fixings for the same pair.
+
+## 🧩 ERP & accounting systems
+
+Loading the official Central Bank of Tunisia rate into an accounting system is a supported workflow, not a hack. Step-by-step guides with the direction each system expects:
+
+- [Dynamics 365 Business Central](https://allratestoday.com/docs/integrations/business-central/) — built-in Currency Exchange Rate Service, no code
+- [Xero](https://allratestoday.com/docs/integrations/xero/) · [QuickBooks Online](https://allratestoday.com/docs/integrations/quickbooks/) · [SAP S/4HANA and ECC](https://allratestoday.com/docs/integrations/sap/) · [Odoo](https://allratestoday.com/docs/integrations/odoo/)
+
+The same keyed endpoints return `?format=csv`, `?format=xml` and `?format=xlsx`, and accept the key as `?api_key=` on the URL for importers that cannot send headers:
+
+```bash
+curl "https://allratestoday.com/api/v1/central-bank/bct/latest?format=xml&api_key=art_live_..."
+```
+
+## 🤖 AI agents
+
+- MCP server: `npx -y @allratestoday/central-bank-mcp` (stdio) or the hosted endpoint `https://allratestoday.com/api/mcp` — tools for official rates, history, cross-bank comparison and publication calendars
+- Machine-readable site guide: [llms.txt](https://allratestoday.com/llms.txt) · [for-ai-agents](https://allratestoday.com/for-ai-agents/)
+
 ## ⚖️ Published vs derived rates
 
 If Central Bank of Tunisia does not print a pair directly, the API resolves it from the central bank's own table and says so — official and computed values are never confused:
@@ -248,7 +296,8 @@ Need the whole archive rather than an API call? The same published tables are mi
 
 - [Central Bank of Tunisia rates page](https://allratestoday.com/central-bank-rates-api/bct/) — live table, publication cadence, FAQ
 - [All central bank sources](https://allratestoday.com/central-bank-rates-api/)
-- [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/)
+- [Package docs on the site](https://allratestoday.com/docs/sdk/bct-exchange-rate/) · [ERP integration guides](https://allratestoday.com/docs/integrations/)
+- [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/) · [Methodology](https://allratestoday.com/official-rates-methodology/)
 - [Register (free)](https://allratestoday.com/register) · [Pricing](https://allratestoday.com/pricing/)
 - [GitHub](https://github.com/AllRates-Today/bct-exchange-rate)
 
