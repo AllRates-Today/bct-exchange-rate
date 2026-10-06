@@ -85,10 +85,10 @@ const pair = await getRate('USD', 'TND', { apiKey: 'art_live_...' });
 {
   bank: 'bct',
   name: 'Central Bank of Tunisia',
-  rate_date: '2026-09-24',   // Central Bank of Tunisia's own publication date
+  rate_date: '2026-10-05',   // Central Bank of Tunisia's own publication date
   source: 'USD',
   target: 'TND',
-  rate: 2.9586,
+  rate: 3.0062,
   rate_type: 'reference',
   derived: false,
   method: 'published',
@@ -113,9 +113,9 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'bct',
   name: 'Central Bank of Tunisia',
-  rate_date: '2026-09-24',
+  rate_date: '2026-10-05',
   rates: [
-    { "base": "USD", "quote": "TND", "type": "reference", "value": 2.9586 },
+    { "base": "USD", "quote": "TND", "type": "reference", "value": 3.0062 },
     // … the rest of the published table (20 currencies vs TND)
   ],
   disclaimer: '…'
@@ -155,7 +155,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'bct-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'TND', from: '2026-01-01', to: '2026-09-24' },
+  { source: 'USD', target: 'TND', from: '2026-01-01', to: '2026-10-05' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -168,11 +168,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'TND',
   from: '2026-01-01',
-  to: '2026-09-24',
+  to: '2026-10-05',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-09-24', rate: 2.9586, rate_type: 'reference', derived: false, method: 'published' },
+    { date: '2026-10-05', rate: 3.0062, rate_type: 'reference', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
