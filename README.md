@@ -4,6 +4,8 @@
 [![license](https://img.shields.io/npm/l/bct-exchange-rate.svg)](https://github.com/AllRates-Today/bct-exchange-rate/blob/main/LICENSE)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](https://www.npmjs.com/package/bct-exchange-rate)
 [![TypeScript](https://img.shields.io/badge/TypeScript-types%20included-3178C6.svg)](https://www.typescriptlang.org/)
+[![USD/TND today](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fallratestoday.com%2Fapi%2Fopen%2Fcentral-bank%2Fbct%3Fsource%3DUSD%26target%3DTND&query=%24.rate&label=USD%2FTND%20published%20by%20Central%20Bank%20of%20Tunisia&color=0A7E8C&cacheSeconds=3600)](https://allratestoday.com/central-bank-rates-api/bct/)
+[![rate date](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fallratestoday.com%2Fapi%2Fopen%2Fcentral-bank%2Fbct%3Fsource%3DUSD%26target%3DTND&query=%24.rate_date&label=rate%20date&color=555&cacheSeconds=3600)](https://allratestoday.com/central-bank-rates-api/bct/)
 
 **Official Central Bank of Tunisia (Tunisia) daily exchange rates for Node.js and TypeScript. The published central bank rates behind tax filings, customs valuations, audits, and compliant invoicing — not market estimates, but the numbers Central Bank of Tunisia itself prints, every business day.**
 
@@ -32,6 +34,39 @@ console.log(r.rate_date, r.rates.length); // the central bank's latest published
 ```
 
 The open endpoint serves the *latest* table only and asks for a visible attribution link. The client below uses the keyed API, which adds point-in-time tables, history, and CSV/XML/Excel output.
+
+## 📈 Latest published table
+
+Today's full Central Bank of Tunisia table, straight from the central bank's latest publication. On GitHub it is refreshed by [a daily Action](.github/workflows/daily-table.yml) that reads the keyless endpoint above and commits only when the central bank publishes a new table; the copy on npm is as of the package's publish date.
+
+<!-- daily-table:start -->
+Published **2026-10-07** by Central Bank of Tunisia — 20 rates. Updated 2026-10-08.
+
+| Base | Quote | Type | Rate |
+| --- | --- | --- | ---: |
+| AED | TND | reference | 0.8146 |
+| BHD | TND | reference | 7.9352 |
+| CAD | TND | reference | 2.099 |
+| CHF | TND | reference | 3.59548 |
+| CNY | TND | reference | 0.4462 |
+| DKK | TND | reference | 0.447489 |
+| DZD | TND | reference | 0.02221 |
+| EUR | TND | reference | 3.3671 |
+| GBP | TND | reference | 3.9496 |
+| JPY | TND | reference | 0.0189151 |
+| KWD | TND | reference | 9.7089 |
+| LYD | TND | reference | 0.4657 |
+| MAD | TND | reference | 0.29926 |
+| MRU | TND | reference | 0.07458 |
+| NOK | TND | reference | 0.311922 |
+| OMR | TND | reference | 7.771 |
+| QAR | TND | reference | 0.82075 |
+| SAR | TND | reference | 0.79693 |
+| SEK | TND | reference | 0.29826 |
+| USD | TND | reference | 3.0073 |
+
+Source: [Official rates published by BCT, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/bct/). Rates are as printed by the central bank; AllRatesToday is not affiliated with it.
+<!-- daily-table:end -->
 
 ## 🔑 Get your API key
 
