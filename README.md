@@ -42,30 +42,30 @@ The open endpoint serves the *latest* table only and asks for a visible attribut
 The image is rendered live from the keyless endpoint above, so it follows the central bank's publications on npm and on GitHub alike without a new release. The text copy below is there for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the central bank publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
-Published **2026-10-12** by Central Bank of Tunisia — 20 rates. Updated 2026-10-14.
+Published **2026-10-13** by Central Bank of Tunisia — 20 rates. Updated 2026-10-14.
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | TND | reference | 0.81488 |
-| BHD | TND | reference | 7.924 |
-| CAD | TND | reference | 2.0979 |
-| CHF | TND | reference | 3.5899 |
-| CNY | TND | reference | 0.4471 |
-| DKK | TND | reference | 0.447373 |
-| DZD | TND | reference | 0.02223 |
-| EUR | TND | reference | 3.3653 |
-| GBP | TND | reference | 3.9588 |
-| JPY | TND | reference | 0.0188618 |
-| KWD | TND | reference | 9.7124 |
-| LYD | TND | reference | 0.4657 |
-| MAD | TND | reference | 0.3066 |
-| MRU | TND | reference | 0.07441 |
-| NOK | TND | reference | 0.313047 |
-| OMR | TND | reference | 7.7732 |
-| QAR | TND | reference | 0.82105 |
-| SAR | TND | reference | 0.79689 |
-| SEK | TND | reference | 0.29866 |
-| USD | TND | reference | 3.0064 |
+| AED | TND | reference | 0.81365 |
+| BHD | TND | reference | 7.9139 |
+| CAD | TND | reference | 2.1006 |
+| CHF | TND | reference | 3.59106 |
+| CNY | TND | reference | 0.4463 |
+| DKK | TND | reference | 0.447666 |
+| DZD | TND | reference | 0.0222 |
+| EUR | TND | reference | 3.3637 |
+| GBP | TND | reference | 3.9593 |
+| JPY | TND | reference | 0.0188727 |
+| KWD | TND | reference | 9.6928 |
+| LYD | TND | reference | 0.4645 |
+| MAD | TND | reference | 0.3076 |
+| MRU | TND | reference | 0.07407 |
+| NOK | TND | reference | 0.313818 |
+| OMR | TND | reference | 7.7617 |
+| QAR | TND | reference | 0.81979 |
+| SAR | TND | reference | 0.79567 |
+| SEK | TND | reference | 0.29985 |
+| USD | TND | reference | 3.0071 |
 
 Source: [Official rates published by BCT, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/bct/). Rates are as printed by the central bank; AllRatesToday is not affiliated with it.
 <!-- daily-table:end -->
