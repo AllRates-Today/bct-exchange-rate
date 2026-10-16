@@ -42,30 +42,30 @@ The open endpoint serves the *latest* table only and asks for a visible attribut
 The image is rendered live from the keyless endpoint above, so it follows the central bank's publications on npm and on GitHub alike without a new release. The text copy below is there for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the central bank publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
-Published **2026-10-13** by Central Bank of Tunisia — 20 rates. Updated 2026-10-14.
+Published **2026-10-14** by Central Bank of Tunisia — 20 rates. Updated 2026-10-16.
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | TND | reference | 0.81365 |
-| BHD | TND | reference | 7.9139 |
-| CAD | TND | reference | 2.1006 |
-| CHF | TND | reference | 3.59106 |
-| CNY | TND | reference | 0.4463 |
-| DKK | TND | reference | 0.447666 |
-| DZD | TND | reference | 0.0222 |
-| EUR | TND | reference | 3.3637 |
-| GBP | TND | reference | 3.9593 |
-| JPY | TND | reference | 0.0188727 |
-| KWD | TND | reference | 9.6928 |
-| LYD | TND | reference | 0.4645 |
-| MAD | TND | reference | 0.3076 |
-| MRU | TND | reference | 0.07407 |
-| NOK | TND | reference | 0.313818 |
-| OMR | TND | reference | 7.7617 |
-| QAR | TND | reference | 0.81979 |
-| SAR | TND | reference | 0.79567 |
-| SEK | TND | reference | 0.29985 |
-| USD | TND | reference | 3.0071 |
+| AED | TND | reference | 0.81714 |
+| BHD | TND | reference | 7.9465 |
+| CAD | TND | reference | 2.1009 |
+| CHF | TND | reference | 3.58034 |
+| CNY | TND | reference | 0.4484 |
+| DKK | TND | reference | 0.446683 |
+| DZD | TND | reference | 0.02231 |
+| EUR | TND | reference | 3.3524 |
+| GBP | TND | reference | 3.958 |
+| JPY | TND | reference | 0.0188874 |
+| KWD | TND | reference | 9.74 |
+| LYD | TND | reference | 0.4671 |
+| MAD | TND | reference | 0.30607 |
+| MRU | TND | reference | 0.0744 |
+| NOK | TND | reference | 0.314206 |
+| OMR | TND | reference | 7.7957 |
+| QAR | TND | reference | 0.82338 |
+| SAR | TND | reference | 0.79926 |
+| SEK | TND | reference | 0.29839 |
+| USD | TND | reference | 3.008 |
 
 Source: [Official rates published by BCT, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/bct/). Rates are as printed by the central bank; AllRatesToday is not affiliated with it.
 <!-- daily-table:end -->
@@ -259,7 +259,7 @@ curl "https://allratestoday.com/api/v1/central-bank/bct/latest?format=xml&api_ke
 - MCP server: `npx -y @allratestoday/central-bank-mcp` (stdio) or the hosted endpoint `https://allratestoday.com/api/mcp` — tools for official rates, history, cross-bank comparison and publication calendars
 - Already using the general SDK or MCP server? Since 2026-10-01 [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk) 1.4+ has `officialRates('bct')` and [`@allratestoday/mcp-server`](https://www.npmjs.com/package/@allratestoday/mcp-server) 0.6+ has a `get_official_rates` tool — both return this source's latest table with no key, so you can add it without a second dependency
 - Claude Code plugin (no key): `/plugin marketplace add AllRates-Today/claude-code-plugin` then `/plugin install allratestoday@allratestoday` — bundles both MCP servers plus an `/official-rate bct ...` command
-- Need dated tables or history for an evaluation? Agents can self-issue a trial key with no signup: `POST https://allratestoday.com/api/agent/keys` (send `Content-Type: application/json`) returns a 100-call key valid 7 days; the MCP servers expose it as `request_trial_key`
+- Evaluating? Agents can self-issue a trial key with no signup: `POST https://allratestoday.com/api/agent/keys` (send `Content-Type: application/json`) returns a 100-call key valid 7 days that covers the free-plan methods (latest table, pairs); dated tables and history need a [paid plan](https://allratestoday.com/pricing/). The MCP servers expose it as `request_trial_key`
 - Machine-readable site guide: [llms.txt](https://allratestoday.com/llms.txt) · [for-ai-agents](https://allratestoday.com/for-ai-agents/)
 
 ## ⚖️ Published vs derived rates
