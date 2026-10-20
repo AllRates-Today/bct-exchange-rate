@@ -20,6 +20,10 @@
 
 > **Official rate, not mid-market:** every value here is a number Central Bank of Tunisia itself published, fixed once printed and carrying the central bank's own `rate_date` — what filings and audits require. Need the live mid-market rate for pricing or display instead? Use the [mid-market API](https://allratestoday.com/docs/) or [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk). The two can diverge by several percent.
 
+## 🔑 Get your API key
+
+Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required. Latest rates are on every plan, including free.
+
 ## ⚡ Try it without a key
 
 The latest Central Bank of Tunisia table is also served keyless, CORS-open and edge-cached, for evaluation, embeds and AI agents:
@@ -43,39 +47,35 @@ The image is rendered live from the keyless endpoint above, so it follows the ce
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-16 by Central Bank of Tunisia — 20 rates. Updated 2026-10-19.</summary>
+<summary>Table as text: published 2026-10-19 by Central Bank of Tunisia — 20 rates. Updated 2026-10-20.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | TND | reference | 0.81062 |
-| BHD | TND | reference | 7.8811 |
-| CAD | TND | reference | 2.1052 |
-| CHF | TND | reference | 3.6198 |
-| CNY | TND | reference | 0.4452 |
-| DKK | TND | reference | 0.448265 |
-| DZD | TND | reference | 0.02213 |
-| EUR | TND | reference | 3.3674 |
-| GBP | TND | reference | 3.9781 |
-| JPY | TND | reference | 0.0188639 |
-| KWD | TND | reference | 9.6612 |
-| LYD | TND | reference | 0.4635 |
-| MAD | TND | reference | 0.30525 |
-| MRU | TND | reference | 0.07433 |
-| NOK | TND | reference | 0.315114 |
-| OMR | TND | reference | 7.7326 |
-| QAR | TND | reference | 0.81672 |
-| SAR | TND | reference | 0.79329 |
-| SEK | TND | reference | 0.30058 |
-| USD | TND | reference | 2.9951 |
+| AED | TND | reference | 0.81256 |
+| BHD | TND | reference | 7.9156 |
+| CAD | TND | reference | 2.1148 |
+| CHF | TND | reference | 3.61546 |
+| CNY | TND | reference | 0.4466 |
+| DKK | TND | reference | 0.44789 |
+| DZD | TND | reference | 0.02214 |
+| EUR | TND | reference | 3.3613 |
+| GBP | TND | reference | 3.9755 |
+| JPY | TND | reference | 0.0188408 |
+| KWD | TND | reference | 9.6889 |
+| LYD | TND | reference | 0.4649 |
+| MAD | TND | reference | 0.3054 |
+| MRU | TND | reference | 0.07416 |
+| NOK | TND | reference | 0.316727 |
+| OMR | TND | reference | 7.7612 |
+| QAR | TND | reference | 0.81871 |
+| SAR | TND | reference | 0.79525 |
+| SEK | TND | reference | 0.30136 |
+| USD | TND | reference | 3 |
 
 </details>
 
 Source: [Official rates published by BCT, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/bct/). Rates are as printed by the central bank; AllRatesToday is not affiliated with it.
 <!-- daily-table:end -->
-
-## 🔑 Get your API key
-
-Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required. Latest rates are on every plan, including free.
 
 ## 📦 Installation
 
