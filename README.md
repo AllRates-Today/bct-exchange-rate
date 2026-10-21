@@ -37,7 +37,7 @@ const r = await fetch('https://allratestoday.com/api/open/central-bank/bct').the
 console.log(r.rate_date, r.rates.length); // the central bank's latest published table, no key
 ```
 
-The open endpoint serves the *latest* table only (JSON by default; add `?format=csv`, `xml` or `xlsx` for a file) and asks for a visible attribution link. The client below uses the keyed API, which adds point-in-time tables and history.
+The open endpoint serves the *latest* table only (JSON by default; add `?format=csv`, `xml` or `xlsx` for a file) and is free to use with a visible, followable link where the rates are shown: `<a href="https://allratestoday.com">Exchange rates by AllRatesToday</a>` (terms: <https://allratestoday.com/terms/#attribution>). The client below uses the keyed API, which adds point-in-time tables and history; with a key the link is appreciated, not required.
 
 ## 📈 Latest published table
 
@@ -47,30 +47,30 @@ The image is rendered live from the keyless endpoint above, so it follows the ce
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-19 by Central Bank of Tunisia — 20 rates. Updated 2026-10-20.</summary>
+<summary>Table as text: published 2026-10-20 by Central Bank of Tunisia — 20 rates. Updated 2026-10-21.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | TND | reference | 0.81256 |
-| BHD | TND | reference | 7.9156 |
-| CAD | TND | reference | 2.1148 |
-| CHF | TND | reference | 3.61546 |
-| CNY | TND | reference | 0.4466 |
-| DKK | TND | reference | 0.44789 |
-| DZD | TND | reference | 0.02214 |
-| EUR | TND | reference | 3.3613 |
-| GBP | TND | reference | 3.9755 |
-| JPY | TND | reference | 0.0188408 |
-| KWD | TND | reference | 9.6889 |
-| LYD | TND | reference | 0.4649 |
-| MAD | TND | reference | 0.3054 |
-| MRU | TND | reference | 0.07416 |
-| NOK | TND | reference | 0.316727 |
-| OMR | TND | reference | 7.7612 |
-| QAR | TND | reference | 0.81871 |
-| SAR | TND | reference | 0.79525 |
-| SEK | TND | reference | 0.30136 |
-| USD | TND | reference | 3 |
+| AED | TND | reference | 0.81133 |
+| BHD | TND | reference | 7.8941 |
+| CAD | TND | reference | 2.1211 |
+| CHF | TND | reference | 3.61679 |
+| CNY | TND | reference | 0.4461 |
+| DKK | TND | reference | 0.447923 |
+| DZD | TND | reference | 0.02213 |
+| EUR | TND | reference | 3.3614 |
+| GBP | TND | reference | 3.9904 |
+| JPY | TND | reference | 0.0188557 |
+| KWD | TND | reference | 9.6755 |
+| LYD | TND | reference | 0.4644 |
+| MAD | TND | reference | 0.30444 |
+| MRU | TND | reference | 0.07425 |
+| NOK | TND | reference | 0.317061 |
+| OMR | TND | reference | 7.7403 |
+| QAR | TND | reference | 0.81757 |
+| SAR | TND | reference | 0.79447 |
+| SEK | TND | reference | 0.30131 |
+| USD | TND | reference | 2.9969 |
 
 </details>
 
