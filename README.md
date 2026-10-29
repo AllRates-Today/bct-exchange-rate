@@ -47,7 +47,7 @@ The image is rendered live from the keyless endpoint above, so it follows the ce
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-27 by Central Bank of Tunisia — 20 rates. Updated 2026-10-28.</summary>
+<summary>Table as text: published 2026-10-27 by Central Bank of Tunisia — 20 rates. Updated 2026-10-29.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
@@ -235,6 +235,7 @@ The Central Bank of Tunisia publishes daily interbank average dinar rates for ab
 
 - Publisher's own page: [Cours de change](https://www.bct.gov.tn/bct/siteprod/cours.jsp) · [www.bct.gov.tn](https://www.bct.gov.tn)
 - Publication: every business day; the exact schedule, freshness status and any current delay are on the [Central Bank of Tunisia rates page](https://allratestoday.com/central-bank-rates-api/bct/)
+- In the API: usually by **15:25 UTC** (measured over the last 8 publications). Schedule a sync at or after that time and retry hourly until `rate_date` moves; every response carries the same figure as `available_by_utc` — see [when to poll](https://allratestoday.com/docs/#when-to-poll)
 - Values are stored unmodified, with the publisher's own `rate_date` on every row — see the [methodology](https://allratestoday.com/official-rates-methodology/)
 
 ## 🧭 Reading the numbers
