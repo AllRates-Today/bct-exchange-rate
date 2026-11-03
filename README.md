@@ -32,7 +32,7 @@ The image is rendered live from the keyless endpoint, so it follows the central 
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-29 by Central Bank of Tunisia — 20 rates. Updated 2026-10-30.</summary>
+<summary>Table as text: published 2026-10-29 by Central Bank of Tunisia (the API currently flags this table as stale) — 20 rates. Updated 2026-11-03.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
