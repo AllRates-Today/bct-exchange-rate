@@ -32,30 +32,30 @@ The image is rendered live from the keyless endpoint, so it follows the central 
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-11-05 by Central Bank of Tunisia — 20 rates. Updated 2026-11-06.</summary>
+<summary>Table as text: published 2026-11-06 by Central Bank of Tunisia — 20 rates. Updated 2026-11-10.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | TND | reference | 0.81251 |
-| BHD | TND | reference | 7.9104 |
-| CAD | TND | reference | 2.1349 |
-| CHF | TND | reference | 3.64752 |
-| CNY | TND | reference | 0.4474 |
-| DKK | TND | reference | 0.447786 |
-| DZD | TND | reference | 0.02196 |
-| EUR | TND | reference | 3.3832 |
-| GBP | TND | reference | 4.0168 |
-| JPY | TND | reference | 0.0188314 |
-| KWD | TND | reference | 9.6943 |
-| LYD | TND | reference | 0.4656 |
-| MAD | TND | reference | 0.30538 |
-| MRU | TND | reference | 0.07385 |
-| NOK | TND | reference | 0.320988 |
-| OMR | TND | reference | 7.7514 |
-| QAR | TND | reference | 0.81872 |
-| SAR | TND | reference | 0.79511 |
-| SEK | TND | reference | 0.30485 |
-| USD | TND | reference | 3.0107 |
+| AED | TND | reference | 0.81585 |
+| BHD | TND | reference | 7.9416 |
+| CAD | TND | reference | 2.1254 |
+| CHF | TND | reference | 3.65236 |
+| CNY | TND | reference | 0.4492 |
+| DKK | TND | reference | 0.446827 |
+| DZD | TND | reference | 0.02197 |
+| EUR | TND | reference | 3.3719 |
+| GBP | TND | reference | 4.0057 |
+| JPY | TND | reference | 0.0189119 |
+| KWD | TND | reference | 9.7333 |
+| LYD | TND | reference | 0.4682 |
+| MAD | TND | reference | 0.30707 |
+| MRU | TND | reference | 0.07421 |
+| NOK | TND | reference | 0.317197 |
+| OMR | TND | reference | 7.7825 |
+| QAR | TND | reference | 0.82237 |
+| SAR | TND | reference | 0.79829 |
+| SEK | TND | reference | 0.30259 |
+| USD | TND | reference | 3.0179 |
 
 </details>
 
